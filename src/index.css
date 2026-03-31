@@ -1,0 +1,157 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Clinical Curator — Dark Mode Base */
+    --background: 220 20% 8%;
+    --foreground: 210 20% 92%;
+
+    --card: 220 18% 11%;
+    --card-foreground: 210 20% 92%;
+
+    --popover: 220 18% 11%;
+    --popover-foreground: 210 20% 92%;
+
+    --primary: 199 89% 48%;
+    --primary-foreground: 220 20% 8%;
+
+    --secondary: 220 16% 16%;
+    --secondary-foreground: 210 20% 85%;
+
+    --muted: 220 16% 16%;
+    --muted-foreground: 210 15% 55%;
+
+    --accent: 172 66% 50%;
+    --accent-foreground: 220 20% 8%;
+
+    --destructive: 0 72% 55%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 220 14% 18%;
+    --input: 220 14% 18%;
+    --ring: 199 89% 48%;
+
+    --radius: 0.75rem;
+
+    /* Clinical Curator semantic tokens */
+    --conforme: 142 71% 45%;
+    --conforme-foreground: 0 0% 100%;
+    --conforme-light: 142 50% 12%;
+
+    --nao-conforme: 0 72% 55%;
+    --nao-conforme-foreground: 0 0% 100%;
+    --nao-conforme-light: 0 50% 12%;
+
+    --atencao: 47 96% 53%;
+    --atencao-foreground: 220 20% 8%;
+    --atencao-light: 47 50% 12%;
+
+    --na: 210 15% 45%;
+    --na-light: 220 14% 14%;
+
+    --purple: 280 65% 50%;
+    --purple-light: 280 40% 14%;
+
+    /* Gradients */
+    --gradient-header: linear-gradient(180deg, hsl(220 25% 10%) 0%, hsl(220 20% 8%) 100%);
+    --gradient-card: linear-gradient(135deg, hsl(220 18% 13%), hsl(220 18% 10%));
+    --gradient-primary: linear-gradient(135deg, hsl(199 89% 48%), hsl(172 66% 50%));
+
+    /* Glows */
+    --glow-primary: 0 0 20px hsl(199 89% 48% / 0.3);
+    --glow-success: 0 0 20px hsl(142 71% 45% / 0.3);
+    --glow-danger: 0 0 20px hsl(0 72% 55% / 0.3);
+
+    /* Shadows */
+    --shadow-card: 0 1px 3px 0 rgba(0, 0, 0, 0.3), 0 1px 2px -1px rgba(0, 0, 0, 0.2);
+    --shadow-card-hover: 0 4px 16px -2px rgba(0, 0, 0, 0.4), 0 2px 6px -2px rgba(0, 0, 0, 0.3);
+    --shadow-elevated: 0 10px 30px -5px rgba(0, 0, 0, 0.5), 0 8px 10px -6px rgba(0, 0, 0, 0.3);
+
+    --sidebar-background: 220 18% 11%;
+    --sidebar-foreground: 210 20% 85%;
+    --sidebar-primary: 199 89% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 220 16% 16%;
+    --sidebar-accent-foreground: 210 20% 85%;
+    --sidebar-border: 220 14% 18%;
+    --sidebar-ring: 199 89% 48%;
+
+    --font-heading: 'Inter', sans-serif;
+    --font-body: 'Inter', sans-serif;
+    --font-mono: 'Inter', sans-serif;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased;
+    color-scheme: dark;
+    font-family: var(--font-body);
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-heading);
+  }
+}
+
+@layer utilities {
+  .card-shadow {
+    box-shadow: var(--shadow-card);
+  }
+  .card-shadow-hover {
+    box-shadow: var(--shadow-card-hover);
+  }
+  .shadow-elevated {
+    box-shadow: var(--shadow-elevated);
+  }
+  .glow-primary {
+    box-shadow: var(--glow-primary);
+  }
+  .glow-success {
+    box-shadow: var(--glow-success);
+  }
+  .glow-danger {
+    box-shadow: var(--glow-danger);
+  }
+  .gradient-card {
+    background: var(--gradient-card);
+  }
+  .gradient-header {
+    background: var(--gradient-header);
+  }
+  .gradient-primary {
+    background: var(--gradient-primary);
+  }
+  .font-mono {
+    font-family: var(--font-mono);
+    font-variant-numeric: tabular-nums;
+  }
+
+  .scrollbar-dark::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+  .scrollbar-dark::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  .scrollbar-dark::-webkit-scrollbar-thumb {
+    background: hsl(var(--muted-foreground) / 0.3);
+    border-radius: 10px;
+  }
+  .scrollbar-dark::-webkit-scrollbar-thumb:hover {
+    background: hsl(var(--muted-foreground) / 0.5);
+  }
+  /* Firefox */
+  .scrollbar-dark {
+    scrollbar-width: thin;
+    scrollbar-color: hsl(var(--muted-foreground) / 0.3) transparent;
+  }
+}
