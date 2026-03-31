@@ -1,5 +1,5 @@
 # 🏥 Dashboard de Auditoria Interna e Gestão de Risco
-## Cateter Venoso e Sistema de Infusão - SCIH
+## Dashboard de Auditoria Interna e Gestão de Risco
 
 ![Dashboard Preview](./public/dashboard-print.png)
 
